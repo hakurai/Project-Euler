@@ -3,9 +3,10 @@
  */
 public class Problem3 {
     public static void main(String[] args) {
-        Problem3 problem3 = new Problem3();
-
-        System.out.println(problem3.execute(600851475143L));
+        Timer.start();
+        Problem3 problem = new Problem3();
+        System.out.println(problem.execute(600851475143L));
+        Timer.stop();
     }
 
     public long execute(long n) {
