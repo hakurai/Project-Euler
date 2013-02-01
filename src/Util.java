@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,5 +53,13 @@ public final class Util {
         }
 
         return num;
+    }
+
+    public static BigInteger factorial(int n) {
+        BigInteger res = new BigInteger("1");
+        for (int i = 2; i <= n; i++) {
+            res = res.multiply(new BigInteger(Integer.toString(i)));
+        }
+        return res;
     }
 }
