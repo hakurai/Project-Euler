@@ -15,7 +15,7 @@ public class Problem5 {
     public int execute(int max) {
         Map<Integer, Integer> setMap = new HashMap<Integer, Integer>();
         for (int i = 1; i <= max; i++){
-            Map<Integer, Integer> map = primeNumbers(i);
+            Map<Integer, Integer> map = Util.primeNumbers(i);
             for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
                 Integer oldNum = setMap.get(entry.getKey());
                 if( oldNum == null || entry.getValue() > oldNum){
@@ -36,27 +36,5 @@ public class Problem5 {
         return res;
     }
 
-    private Map<Integer, Integer> primeNumbers(int n) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
-        int d = 2;
-        while (n != 1) {
-            if (n % d == 0) {
-                Integer num = map.get(d);
-                if (num != null) {
-                    map.put(d, num + 1);
-                } else {
-                    map.put(d, 1);
-                }
-
-                n/= d;
-            } else {
-                d++;
-            }
-
-        }
-
-        return map;
-    }
 
 }
